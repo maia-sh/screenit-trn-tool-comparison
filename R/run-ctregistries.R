@@ -68,3 +68,12 @@ if (!fs::file_exists(filename)) {
 } else {
   trn_df <- readr::read_csv(filename)
 }
+
+# If using updated package, also clean TRNs
+# The earlier package version produces are error, since only some registries had implemented cleaning
+
+if (ctregistries_version == "updated"){
+  trn_df_clean <-
+    trn_df |>
+    dplyr::mutate(trn_clean = purrr::map_chr(trn, ctregistries::clean_trn))
+}
