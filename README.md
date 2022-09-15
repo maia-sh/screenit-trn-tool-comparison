@@ -34,11 +34,28 @@ The tool consists of a single script that provides a R function to check
 for TRNs. The function reads in text files from a specified folder and
 iteratively writes a csv of detected TRNs.
 
-1.  Save
-    [trial_indentifier_search.R](https://github.com/bgcarlisle/TRNscreener/blob/main/trial_identifier_search.R)
-    script into the desired repository
-2.  Source the script
-3.  Run `run_trial_identifier_search(folder, save_file)` where `folder`
+1.  Source the script from the URL:
+    `source("https://raw.githubusercontent.com/bgcarlisle/TRNscreener/main/trial_identifier_search.R")`
+2.  Run `run_trial_identifier_search(folder, save_file)` where `folder`
+    is the folder of text files and `save_file` is the output csv.
+
+## [TRNscreener ScreenIT pipeline](https://github.com/PeterEckmann1/aswg-pipeline/blob/master/utils/trial-identifier/identifier.R)
+
+Upon further evaluation, I realized that the ScreenIT pipeline actually
+uses an older version of the TRNscreener, which was manually
+copied-and-pasted into the pipeline. The version includes only
+ClinicalTrials.gov and ISRCTN, as well as checking whether TRNs in
+ClinicalTrials.gov resolve.
+
+### Usage
+
+The tool consists of a single script that provides a R function to check
+for TRNs. The function reads in text files from a specified folder and
+iteratively writes a csv of detected TRNs.
+
+1.  Source the script from the URL:
+    `source("https://raw.githubusercontent.com/PeterEckmann1/aswg-pipeline/master/utils/trial-identifier/identifier.R")`
+2.  Run `run_trial_identifier_search(folder, save_file)` where `folder`
     is the folder of text files and `save_file` is the output csv.
 
 ## [ctregistries](https://github.com/maia-sh/ctregistries)
@@ -105,9 +122,10 @@ and unzipping, no additional manipulation (e.g., renaming) was done. The
 dataset includes full-text as well as methods only versions; all
 analyses were run on the full-text versions.
 
-For `TRNscreener`,
-[`trial_identifier_search.R`](https://github.com/bgcarlisle/TRNscreener/blob/main/trial_identifier_search.R)
-was manually copied and saved into the repository.
+## Output
+
+csv with one row per pmcid, text extract of trns (separated within a
+cell), and boolean
 
 ## Reflections/Discussion
 
