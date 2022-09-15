@@ -1,4 +1,5 @@
 source(here::here("R", "trial_identifier_search.R"))
+# source("https://raw.githubusercontent.com/bgcarlisle/TRNscreener/main/trial_identifier_search.R")
 
 filename <- here::here("data", "trnscreener.csv")
 dir_raw <- here::here("data", "raw", "comparison_set_individual_files", "full_texts")
